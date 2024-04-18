@@ -2,23 +2,20 @@ package main
 
 import "fmt"
 
-type textNode struct {
+type TextNode struct {
 	Text     string
 	TextType string
 	Url      string
 }
 
-type TextNode interface {
-}
-
-func newTextNode(text, textType, url string) textNode {
-	return textNode{
+func NewTextNode(text, textType, url string) TextNode {
+	return TextNode{
 		Text:     text,
 		TextType: textType,
 		Url:      url,
 	}
 }
 
-func (t textNode) String() string {
+func (t TextNode) String() string {
 	return fmt.Sprintf("TextNode('%s', '%s', '%s')", t.Text, t.TextType, t.Url)
 }
